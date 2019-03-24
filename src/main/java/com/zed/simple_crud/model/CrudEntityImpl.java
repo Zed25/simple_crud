@@ -15,6 +15,13 @@ public abstract class CrudEntityImpl<ID> implements CrudEntity<ID> {
     @Id
     protected ID id;
 
+    public CrudEntityImpl() {
+    }
+
+    public CrudEntityImpl(@NotNull ID id) {
+        this.id = id;
+    }
+
     @Override
     public ID getID() {
         return this.id;

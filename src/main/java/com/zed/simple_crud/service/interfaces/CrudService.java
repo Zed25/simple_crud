@@ -2,6 +2,7 @@ package com.zed.simple_crud.service.interfaces;
 
 import com.zed.simple_crud.enumeration.OperationDeniedException;
 import com.zed.simple_crud.model.CrudEntityImpl;
+import com.zed.simple_crud.model.interfaces.CrudEntity;
 import org.springframework.lang.Nullable;
 
 import javax.validation.constraints.NotNull;
@@ -11,7 +12,7 @@ import javax.validation.constraints.NotNull;
  * @class T : Object class to manage
  * @class ID : ID class
  * */
-public interface CrudService<T extends CrudEntityImpl<ID>, ID> {
+public interface CrudService<T extends CrudEntity<ID>, ID> {
 
     /* create DB record */
     @NotNull T saveOne(@NotNull T t) throws OperationDeniedException;

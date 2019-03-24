@@ -1,6 +1,7 @@
 package com.zed.simple_crud.service;
 
 import com.zed.simple_crud.model.CrudEntityImpl;
+import com.zed.simple_crud.model.interfaces.CrudEntity;
 import com.zed.simple_crud.repository.PaginatedCrudRepository;
 import com.zed.simple_crud.service.interfaces.PaginatedCrudService;
 import org.springframework.data.domain.Page;
@@ -9,7 +10,7 @@ import org.springframework.data.domain.Sort;
 
 import javax.validation.constraints.NotNull;
 
-public abstract class PaginatedCrudServiceImpl<T extends CrudEntityImpl<ID>, ID>
+public abstract class PaginatedCrudServiceImpl<T extends CrudEntity<ID>, ID>
         extends CrudServiceImpl<T, ID> implements PaginatedCrudService<T, ID> {
 
     @Override

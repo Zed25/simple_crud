@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 import com.zed.simple_crud.controller.interfaces.PaginatedCrudController;
 import com.zed.simple_crud.json_views.SimpleCrudViews;
 import com.zed.simple_crud.model.CrudEntityImpl;
+import com.zed.simple_crud.model.interfaces.CrudEntity;
 import com.zed.simple_crud.service.interfaces.PaginatedCrudService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.constraints.NotNull;
 
-public abstract class PaginatedCrudControllerImpl<T extends CrudEntityImpl<ID>, ID>
+public abstract class PaginatedCrudControllerImpl<T extends CrudEntity<ID>, ID>
         extends CrudControllerImpl<T, ID>
         implements PaginatedCrudController<T, ID> {
 

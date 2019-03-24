@@ -5,6 +5,7 @@ import com.zed.simple_crud.controller.interfaces.CrudController;
 import com.zed.simple_crud.enumeration.OperationDeniedException;
 import com.zed.simple_crud.json_views.SimpleCrudViews;
 import com.zed.simple_crud.model.CrudEntityImpl;
+import com.zed.simple_crud.model.interfaces.CrudEntity;
 import com.zed.simple_crud.service.interfaces.CrudService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.NotNull;
 
-public abstract class CrudControllerImpl<T extends CrudEntityImpl<ID>, ID> implements CrudController<T, ID> {
+public abstract class CrudControllerImpl<T extends CrudEntity<ID>, ID> implements CrudController<T, ID> {
 
     @Override
     @JsonView(SimpleCrudViews.Details.class)

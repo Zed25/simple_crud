@@ -2,12 +2,13 @@ package com.zed.simple_crud.service;
 
 import com.zed.simple_crud.enumeration.OperationDeniedException;
 import com.zed.simple_crud.model.CrudEntityImpl;
+import com.zed.simple_crud.model.interfaces.CrudEntity;
 import com.zed.simple_crud.service.interfaces.CrudService;
 import org.springframework.data.repository.CrudRepository;
 
 import javax.validation.constraints.NotNull;
 
-public abstract class CrudServiceImpl<T extends CrudEntityImpl<ID>, ID> implements CrudService<T, ID> {
+public abstract class CrudServiceImpl<T extends CrudEntity<ID>, ID> implements CrudService<T, ID> {
 
     /**
      * ----------------------------------------
